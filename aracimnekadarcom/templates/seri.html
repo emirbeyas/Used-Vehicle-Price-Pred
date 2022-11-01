@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="container">
+    <div class="itemWrap d-flex flex-column">
+        <div>
+            {%for row in rows %}
+            <div class="itemOfModelList p-2" id = {{row.replace(" ", "")}}  onclick="select(id)">
+                <p>{{row}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+    <form action="/yil" method="post">
+        <input type="text" id="markaTxt" hidden name="marka" value={{marka}}>
+        <input type="text" id="seriTxt" hidden name="seri" value="">
+
+
+        <button class="onaylaButtonDisable" disabled id="buttonOnayla" type="submit">
+
+            <span
+                style="font-size: 15px; font-style: normal; font-family: apercu-pro, system-ui, sans-serif; font-weight: 600; white-space: nowrap; letter-spacing: 0;">Onayla</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2"
+                viewBox="0 0 16 16" style="margin-top: 3px; margin-left: 3px;">
+                <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </svg>
+        </button>
+    </form>
+
+</div>
+<script>
+    let selectedItem = ""
+    function disableButton() {
+        document.getElementById('buttonOnayla').disabled = true;
+        document.getElementById('buttonOnayla').classList.remove("onaylaButton");
+        document.getElementById('buttonOnayla').classList.add("onaylaButtonDisable");
+        selectedItem = "";
+    }
+    function enableButton() {
+
+        document.getElementById('buttonOnayla').disabled = false;
+        document.getElementById('buttonOnayla').classList.add("onaylaButton");
+        document.getElementById('buttonOnayla').classList.remove("onaylaButtonDisable");
+    }
+    function unselect() {
+        document.getElementById(selectedItem).classList.add("itemOfModelList");
+        document.getElementById(selectedItem).classList.remove("itemOfModelListSelected")
+
+    }
+    function select(selectedItemfc) {
+        if (selectedItem.length > 1) {
+            unselect();
+        }
+        selectedItem = selectedItemfc;
+        enableButton();
+        document.getElementById(selectedItem).classList.add("itemOfModelListSelected")
+        document.getElementById(selectedItem).classList.remove("itemOfModelList")
+        document.getElementById("seriTxt").setAttribute("value", selectedItem);
+    }
+</script>
+
+{% endblock %}

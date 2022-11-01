@@ -1,0 +1,372 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="container">
+    <div class="itemWrap">
+        
+        {%for row in rows[3] %}
+
+        <div class="itemOfList" id={{row}} onclick="select(id, 'motorHacim')">
+            <p>{{row}} cc</p>
+        </div>
+        {% endfor %}
+
+
+        <hr style="border: 1px solid black; height: 1px;">
+        
+        {%for row in rows[4] %}
+
+        <div class="itemOfList" id={{row}} onclick="select(id, 'motorGucu')">
+            <p>{{row}} hp</p>
+        </div>
+        {% endfor %}
+
+
+        <hr style="border: 1px solid black; height: 1px;">
+
+        {%for row in rows[0] %}
+
+        <div class="itemOfList" id={{row.replace(" ", "")}} onclick="select(id, 'vites')">
+            <p>{{row}}</p>
+        </div>
+        {% endfor %}
+
+
+        <hr style="border: 1px solid black; height: 1px;">
+        {%for row in rows[1] %}
+
+        <div class="itemOfList" id={{row.replace(" ", "")}} onclick="select(id, 'yakit')">
+            <p>{{row}}</p>
+        </div>
+        {% endfor %}
+
+
+        <hr style="border: 1px solid black; height: 1px;">
+        {%for row in rows[2] %}
+
+        <div class="itemOfList" id={{row.replace(" ", "")}} onclick="select(id, 'kasa')">
+            <p>{{row}}</p>
+        </div>
+        {% endfor %}
+
+
+        <hr style="border: 1px solid black; height: 1px;">
+
+        <div class="kmTxtdiv">
+            <input type="number" id="kmTxtbox" class="kmTxtbox" onkeypress="return event.charCode >= 48" min="1">
+            <p>KM</p>
+        </div>
+
+        <div class="bdtArea">
+            <table class="hasarTable">
+                <tr>
+                    <th></th>
+                    <th style="width: 80px;">Orijinal</th>
+                    <th style="width: 80px;">Lokal B.</th>
+                    <th style="width: 80px;">Boyalı</th>
+                    <th style="width: 80px;">Değişen</th>
+                </tr>
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sağ Arka Çamurluk</td>
+                    <td><input type="radio" name="SagArkaCamurluk" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="SagArkaCamurluk" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="SagArkaCamurluk" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="SagArkaCamurluk" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Bagaj Kaput</td>
+                    <td><input type="radio" name="bagajKaput" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="bagajKaput" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="bagajKaput" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="bagajKaput" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sol Arka Çamurluk</td>
+                    <td><input type="radio" name="solArkaCamurluk" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="solArkaCamurluk" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="solArkaCamurluk" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="solArkaCamurluk" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sağ Arka Kapı</td>
+                    <td><input type="radio" name="sagArkaKapi" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="sagArkaKapi" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="sagArkaKapi" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="sagArkaKapi" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sağ Ön Kapı</td>
+                    <td><input type="radio" name="sagOnKapi" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="sagOnKapi" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="sagOnKapi" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="sagOnKapi" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Tavan</td>
+                    <td><input type="radio" name="tavan" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="tavan" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="tavan" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="tavan" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sol Arka Kapı</td>
+                    <td><input type="radio" name="solArkaKapi" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="solArkaKapi" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="solArkaKapi" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="solArkaKapi" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sol Ön Kapı</td>
+                    <td><input type="radio" name="solOnKapi" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="solOnKapi" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="solOnKapi" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="solOnKapi" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sağ Ön Çamurluk</td>
+                    <td><input type="radio" name="sagOnCamurluk" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="sagOnCamurluk" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="sagOnCamurluk" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="sagOnCamurluk" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Motor Kaput</td>
+                    <td><input type="radio" name="motorKaput" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="motorKaput" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="motorKaput" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="motorKaput" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Sol Ön Çamurluk</td>
+                    <td><input type="radio" name="solOnCamurluk" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="solOnCamurluk" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="solOnCamurluk" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="solOnCamurluk" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Ön Tampon</td>
+                    <td><input type="radio" name="onTampon" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="onTampon" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="onTampon" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="onTampon" id="degCb" value="4"></td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: left; padding-left: 10px;">Arka Tampon</td>
+                    <td><input type="radio" name="arkaTampon" id="oriCb" value="1" checked></td>
+                    <td><input type="radio" name="arkaTampon" id="lokCb" value="2"></td>
+                    <td><input type="radio" name="arkaTampon" id="boyCb" value="3"></td>
+                    <td><input type="radio" name="arkaTampon" id="degCb" value="4"></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="kmTxtdiv" style="display: inline-block;">
+            <input type="number" class="kmTxtbox" style="width: 190px;" placeholder="Toplam Tramer" id="toplamTramer" onkeypress="return event.charCode >= 48" min="1">
+            <p>TL</p>
+        </div>
+
+        <div class="agirHasar" style=" float: right;">
+            <select name="agirHasar" id="agirHasar" onchange="enableButton()">
+                <option value="2">Ağır Hasarlı</option>
+                <option value="1">Evet</option>
+                <option value="0">Hayır</option>
+
+            </select>
+        </div>
+
+        <form action="/sonuc" method="post">
+            <input type="text" id="markaTxt" hidden name="marka" value={{marka}}>
+            <input type="text" id="seriTxt" hidden name="seri" value={{seri}}>
+            <input type="text" id="yilTxt" hidden name="yil" value={{yil}}>
+            <input type="text" id="paketTxt" hidden name="paket" value={{paket}}>
+            <input type="text" id="motorHacimTxt" hidden name="motorHacim" value="">
+            <input type="text" id="motorGucuTxt" hidden name="motorGucu" value="">
+            <input type="text" id="vitesTxt" hidden name="vites" value="">
+            <input type="text" id="yakitTxt" hidden name="yakit" value="">
+            <input type="text" id="kasaTxt" hidden name="kasa" value="">
+            <input type="text" id="kmTxt" hidden name="km" value="">
+            <input type="text" id="toplamTramerTxt" hidden name="toplamTramer" value="">
+            <input type="text" id="agirHasarTxt" hidden name="agirHasar" value="">
+
+            <input type="text" id="sagArkaCamurlukTxt" hidden name="sagArkaCamurlukTxt" value=1>
+            <input type="text" id="bagajKaputTxt" hidden name="bagajKaputTxt" value=1>
+            <input type="text" id="solArkaCamurlukTxt" hidden name="solArkaCamurlukTxt" value=1>
+            <input type="text" id="sagArkaKapiTxt" hidden name="sagArkaKapiTxt" value=1>
+            <input type="text" id="sagOnKapiTxt" hidden name="sagOnKapiTxt" value=1>
+            <input type="text" id="tavanTxt" hidden name="tavanTxt" value=1>
+            <input type="text" id="solArkaKapiTxt" hidden name="solArkaKapiTxt" value=1>
+            <input type="text" id="solOnKapiTxt" hidden name="solOnKapiTxt" value=1>
+            <input type="text" id="sagOnCamurlukTxt" hidden name="sagOnCamurlukTxt" value=1>
+            <input type="text" id="motorKaputTxt" hidden name="motorKaputTxt" value=1>
+            <input type="text" id="solOnCamurlukTxt" hidden name="solOnCamurlukTxt" value=1>
+            <input type="text" id="onTamponTxt" hidden name="onTamponTxt" value=1>
+            <input type="text" id="arkaTamponTxt" hidden name="arkaTamponTxt" value=1>
+    
+            <button class="onaylaButtonDisable" disabled id="buttonOnayla" type="submit" >
+    
+                <span
+                    style="font-size: 15px; font-style: normal; font-family: apercu-pro, system-ui, sans-serif; font-weight: 600; white-space: nowrap; letter-spacing: 0;">Onayla</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2"
+                    viewBox="0 0 16 16" style="margin-top: 3px; margin-left: 3px;">
+                    <path
+                        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>
+            </button>
+        </form>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script>
+
+            let selectedItemKasa = ""
+            let selectedItemYakit = ""
+            let selectedItemVites = ""
+            let selectedItemMotorHacim = ""
+            let selectedItemMotorGucu = ""
+            var agirHasar;
+            
+            // function mes(){
+            //         alert(document.getElementById('motorHacimTxt').value) 
+            //         alert(document.getElementById('motorGucuTxt').value) 
+            //         alert(document.getElementById('vitesTxt').value) 
+            //         alert(document.getElementById('yakitTxt').value)
+            //         alert(document.getElementById('kasaTxt').value) 
+            //         alert(document.getElementById('kmTxt').value)
+            //         alert(document.getElementById('toplamTramerTxt').value) 
+            //         alert(document.getElementById('agirHasarTxt').value) 
+
+            //         alert(document.getElementById('sagArkaCamurlukTxt').value)
+            //         alert(document.getElementById('bagajKaputTxt').value) 
+            //         alert(document.getElementById('solArkaCamurlukTxt').value) 
+            //         alert(document.getElementById('sagArkaKapiTxt').value) 
+            //         alert(document.getElementById('sagOnKapiTxt').value) 
+            //         alert(document.getElementById('tavanTxt').value) 
+            //         alert(document.getElementById('solArkaKapiTxt').value) 
+            //         alert(document.getElementById('solOnKapiTxt').value) 
+            //         alert(document.getElementById('sagOnCamurlukTxt').value) 
+            //         alert(document.getElementById('motorKaputTxt').value) 
+            //         alert(document.getElementById('solOnCamurlukTxt').value) 
+            //         alert(document.getElementById('onTamponTxt').value) 
+            //         alert(document.getElementById('arkaTamponTxt').value) 
+
+            // }
+
+            function disableButton() {
+                document.getElementById('buttonOnayla').disabled = true;
+                document.getElementById('buttonOnayla').classList.remove("onaylaButton");
+                document.getElementById('buttonOnayla').classList.add("onaylaButtonDisable");
+                selectedItemKasa = "";
+                selectedItemYakit = "";
+                selectedItemVites = "";
+                selectedItemMotorHacim = ""
+                selectedItemMotorGucu = ""
+            }
+            function enableButton() {
+                agirHasar = document.getElementById('agirHasar').value;
+                if ((selectedItemKasa.length > 2) && (selectedItemYakit.length > 2) && (selectedItemVites.length > 2) && (selectedItemMotorGucu.length > 1) && (selectedItemMotorHacim.length > 1) && ((agirHasar == 1) || (agirHasar == 0))) {
+
+                    document.getElementById('buttonOnayla').disabled = false;
+                    document.getElementById('buttonOnayla').classList.add("onaylaButton");
+                    document.getElementById('buttonOnayla').classList.remove("onaylaButtonDisable");
+                    
+                    
+                    document.getElementById('motorHacimTxt').value = selectedItemMotorHacim
+                    document.getElementById('motorGucuTxt').value = selectedItemMotorGucu
+                    document.getElementById('vitesTxt').value = selectedItemVites
+                    document.getElementById('yakitTxt').value = selectedItemYakit
+                    document.getElementById('kasaTxt').value = selectedItemKasa
+                    document.getElementById('kmTxt').value = document.getElementById('kmTxtbox').value
+                    document.getElementById('toplamTramerTxt').value = document.getElementById('toplamTramer').value
+                    document.getElementById('agirHasarTxt').value = agirHasar
+
+                    document.getElementById('sagArkaCamurlukTxt').value = document.querySelector('input[name="SagArkaCamurluk"]:checked').value
+                    document.getElementById('bagajKaputTxt').value = document.querySelector('input[name="bagajKaput"]:checked').value
+                    document.getElementById('solArkaCamurlukTxt').value = document.querySelector('input[name="solArkaCamurluk"]:checked').value
+                    document.getElementById('sagArkaKapiTxt').value = document.querySelector('input[name="sagArkaKapi"]:checked').value
+                    document.getElementById('sagOnKapiTxt').value = document.querySelector('input[name="sagOnKapi"]:checked').value
+                    document.getElementById('tavanTxt').value = document.querySelector('input[name="tavan"]:checked').value
+                    document.getElementById('solArkaKapiTxt').value = document.querySelector('input[name="solArkaKapi"]:checked').value
+                    document.getElementById('solOnKapiTxt').value = document.querySelector('input[name="solOnKapi"]:checked').value
+                    document.getElementById('sagOnCamurlukTxt').value = document.querySelector('input[name="sagOnCamurluk"]:checked').value
+                    document.getElementById('motorKaputTxt').value = document.querySelector('input[name="motorKaput"]:checked').value
+                    document.getElementById('solOnCamurlukTxt').value = document.querySelector('input[name="solOnCamurluk"]:checked').value
+                    document.getElementById('onTamponTxt').value = document.querySelector('input[name="onTampon"]:checked').value
+                    document.getElementById('arkaTamponTxt').value = document.querySelector('input[name="arkaTampon"]:checked').value
+
+                } else {
+                    document.getElementById('buttonOnayla').disabled = true;
+                    document.getElementById('buttonOnayla').classList.remove("onaylaButton");
+                    document.getElementById('buttonOnayla').classList.add("onaylaButtonDisable");
+                }
+            }
+            function unselect(selectedItem) {
+                document.getElementById(selectedItem).classList.add("itemOfList");
+                document.getElementById(selectedItem).classList.remove("itemOfListSelected")
+
+            }
+            function select(itemfc, bolge) {
+                if (bolge == "kasa") {
+                    if (selectedItemKasa.length > 2) {
+                        unselect(selectedItemKasa);
+                    }
+                    selectedItemKasa = itemfc;
+                    document.getElementById(selectedItemKasa).classList.add("itemOfListSelected")
+                    document.getElementById(selectedItemKasa).classList.remove("itemOfList")
+                }
+                else if (bolge == "yakit") {
+                    if (selectedItemYakit.length > 2) {
+                        unselect(selectedItemYakit);
+                    }
+                    selectedItemYakit = itemfc;
+                    document.getElementById(selectedItemYakit).classList.add("itemOfListSelected")
+                    document.getElementById(selectedItemYakit).classList.remove("itemOfList")
+                }
+                else if (bolge == "vites") {
+                    if (selectedItemVites.length > 2) {
+                        unselect(selectedItemVites);
+                    }
+                    selectedItemVites = itemfc;
+                    document.getElementById(selectedItemVites).classList.add("itemOfListSelected")
+                    document.getElementById(selectedItemVites).classList.remove("itemOfList")
+                }
+                else if (bolge == "motorHacim") {
+                    if (selectedItemMotorHacim.length > 2) {
+                        unselect(selectedItemMotorHacim);
+                    }
+                    selectedItemMotorHacim = itemfc;
+                    document.getElementById(selectedItemMotorHacim).classList.add("itemOfListSelected")
+                    document.getElementById(selectedItemMotorHacim).classList.remove("itemOfList")
+                }
+                else if (bolge == "motorGucu") {
+                    if (selectedItemMotorGucu.length > 2) {
+                        unselect(selectedItemMotorGucu);
+                    }
+                    selectedItemMotorGucu = itemfc;
+                    document.getElementById(selectedItemMotorGucu).classList.add("itemOfListSelected")
+                    document.getElementById(selectedItemMotorGucu).classList.remove("itemOfList")
+                }
+
+                // enableButton();
+                enableButton();
+
+            }
+
+
+
+        </script>
+        {% endblock %}

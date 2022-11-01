@@ -1,0 +1,375 @@
+.container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    /* 534 ten sonra 2 ye düsür */
+    
+}
+.itemWrap{
+    width: 520px;
+    height: auto;
+    margin: auto;
+}
+.item{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    justify-content: space-between;
+    margin:10px 10px;
+    background-color: #9b2d30;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition-duration: 1s;
+}
+.item:-webkit-any-link{
+    cursor: default;
+}
+.item:hover{
+    background-color: rgba(245, 245, 245, 0.205);
+
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+
+.onaylaButton {
+    position: fixed;
+    z-index: 999;
+    width: auto;
+    height: 45px;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.780);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 30px;
+    right: 30px;
+    border: none;
+   
+}
+    .onaylaButton:hover {
+      background-color: white;
+      transition: all 0.4s ease;
+    }
+
+.onaylaButtonDisable{
+    position: fixed;
+    z-index: 999;
+    width: auto;
+    height: 45px;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.180);
+    border-radius: 5px;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 30px;
+    right: 30px;
+    border: none;
+}
+
+.itemLogoContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.itemLogoContainer img{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-left:25px;
+    margin-right: 25px;
+    max-height: 100px;
+    object-fit: contain;
+    
+}
+
+.itemSelected{
+    transition-duration: 1s;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    justify-content: space-between;
+    margin:10px 10px;
+    background-color: #9b2d30;
+    background-color: rgba(245, 245, 245, 0.855);
+
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+.itemOfList{
+    height: 45px;
+    
+    position: relative;
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+    justify-content: space-between;
+    margin:10px 10px;
+    background-color: #9b2d30;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition-duration: 1s;
+}
+.itemOfList p{
+    color: rgba(0, 0, 0, 0.538);
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    cursor: default;
+
+    font-size: 15px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    
+}
+.itemOfList:hover{
+    background-color: rgba(245, 245, 245, 0.205);
+
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+
+
+
+.itemOfListSelected{
+    height: 45px;
+    background-color: rgba(245, 245, 245, 0.859);
+    
+    position: relative;
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+    justify-content: space-between;
+    margin:10px 10px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition-duration: 1s;
+}
+.itemOfListSelected p{
+    color: rgba(0, 0, 0, 0.538);
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    cursor: default;
+
+    font-size: 15px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    
+}
+
+.itemOfModelList{
+    height: 45px;
+    position: relative;
+    margin:10px 10px;
+    background-color: #9b2d30;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition-duration: 1s;
+}
+.itemOfModelList p{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    cursor: default;
+}
+.itemOfModelList:hover{
+    background-color: rgba(245, 245, 245, 0.205);
+
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+.itemOfModelListSelected{
+    height: 45px;
+    position: relative;
+    margin:10px 10px;
+    background-color: rgba(245, 245, 245, 0.859);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition-duration: 1s;
+}
+.itemOfModelListSelected p{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    cursor: default;
+}
+.kmTxtbox{
+    height: 44px;
+    
+    
+    width: 180px;
+    display: inline-block;
+    justify-content: space-between;
+    background-color: #9b2d30;
+
+    border: none;
+    font-size: 22px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+    transition-duration: 1s;
+    padding-left: 10px;
+}
+.kmTxtbox:focus{
+    border: none;
+    outline: none;
+}
+.kmTxtdiv{
+    position: relative;
+    
+    margin:10px 10px;
+    width: 230px;
+    height: 45px;
+    background-color: #9b2d30;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+.kmTxtdiv p{
+    display: inline-block;
+    font-size: 22px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+}
+.hasarTable{
+    width: 100%;
+    text-align: center;
+    
+}
+
+.hasarTable tr{
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    height: 45px;
+    transition-duration: 1s;
+
+}
+.hasarTable tr:hover{
+    background-color: rgba(245, 245, 245, 0.205);
+
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #9b2d30;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+.agirHasar select, .agirHasar option {
+    border: none;
+    
+    margin:10px 10px;
+    width: 230px;
+    height: 45px;
+    background-color: #9b2d30;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    font-size: 22px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+    transition-duration: 1s;
+
+}
+.agirHasar select:focus {
+    border: none;
+    outline: none;
+    background-color: rgba(245, 245, 245, 0.205);
+
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+
+
+.sonucContainer{
+    width: 100%;
+    background-color: rgba(245, 245, 245, 0.305);
+    height: 630px;
+}
+
+.tahminP{
+    color: darkslategrey;
+    font-size: 22px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.apfP{
+    color: darkslategrey;
+    font-size: 22px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nohover:hover{
+    background-color: #9b2d30;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+
+}
+.errorCode{
+    color: whitesmoke;
+    font-size: 72px;
+    font-style: normal;
+    font-family: apercu-pro, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 22px;
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="container">
+
+
+    <div class="itemWrap" style="position: relative;">
+
+        <img src="{{ url_for('static', filename='images/others/errorPage.png') }}" width="100%">
+        <h1 class="errorCode">{{code}}</h1>
+        <p class="apfP" style="top: 30%; color: whitesmoke; text-align: center;">{{name}}</p>
+        <!-- <p class="apfP" style="top: 175px; color: whitesmoke;">{{description}}</p> -->
+        
+        <div class="itemOfModelList p-2" style="text-align: center; cursor: pointer;" onclick=" location.href='/';"">
+            <p style="position: absolute; left: 50%; transform: translate(-50%, -50%);">Ana Sayfaya Dön</p>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+
+
+{% endblock %}
